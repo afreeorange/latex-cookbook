@@ -1,0 +1,19 @@
+{
+  "name": "latex-cookbook",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:afreeorange/latex-cookbook.git",
+  "author": "Nikhil Anand <mail@nikhil.io> (https://nikhil.io)",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "npx @11ty/eleventy --watch --serve",
+    "clean": "rm -rf build"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "^1.0.2",
+    "eleventy-plugin-mathjax": "^2.0.4",
+    "markdown-it": "^13.0.1",
+    "markdown-it-mathjax3": "^4.3.2"
+  }
+}
