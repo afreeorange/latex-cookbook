@@ -8,10 +8,14 @@
   "private": true,
   "scripts": {
     "start": "npx @11ty/eleventy --watch --serve",
+    "build": "yarn clean; npx @11ty/eleventy --pathprefix latex",
+    "build:dev": "yarn clean; npx @11ty/eleventy",
+    "deploy": "yarn build; aws s3 sync build/ s3://public.nikhil.io/latex/",
     "clean": "rm -rf build"
   },
   "dependencies": {
     "@11ty/eleventy": "^1.0.2",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^4.2.0",
     "eleventy-plugin-mathjax": "^2.0.4",
     "markdown-it": "^13.0.1",
     "markdown-it-mathjax3": "^4.3.2"

@@ -1,28 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>{{ title }}</title>
+    <link rel="stylesheet" href="{{"/styles.css" | url }}"/>
   </head>
   <head></head>
   <body>
-    <nav>
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/search">Search</a></li>
-        <li><a href="/recipes">Recipes</a></li>
-        <li><a href="/about">About</a></li>
-      </ul>
-    </nav>
-    <main>
-      {{ content | safe }}
-    </main>
-    <footer>
-      <p>
-        <a href="https://github.com/afreeorange/latex-cookbook" title="Source Code for this project">Source on Github</a>
-      </p>
-    </footer>
+    <div class="container">
+      <nav>
+        <ul>
+          <li><a href="{{'/' | url }}" title="Home">Home</a></li>
+          <li><a href="{{"/search" | url }}" title="Search">Search</a></li>
+          <li><a href="{{"/about" | url }}" title="About">About</a></li>
+        </ul>
+      </nav>
+      <main data-url="{{ page.url }}">
+        {{ content | safe }}
+      </main>
+      <footer>
+        <p>
+          <a href="https://github.com/afreeorange/latex-cookbook" title="Source Code for this project">Source on Github</a>
+        </p>
+      </footer>
+    </div>
   </body>
 </html>
